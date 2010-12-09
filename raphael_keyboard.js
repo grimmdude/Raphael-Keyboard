@@ -25,7 +25,7 @@ window.onload = function () {
 	var black_width = white_width/2;
 	var black_height = keyboard_height/1.6;
 	
-	// cycle threw each octave
+	// cycle through each octave
 	var repeat = 0;
 	keyboard_keys = [];
 	for (i=0;i<=octaves;i++) {
