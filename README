@@ -1,1 +1,3 @@
+See http://grimmdude.github.com/Raphael-Keyboard/ for an example.
+
 Keys on keyboard are assigned appropriate keys in the keyboard_keys array.  ie keyboard_keys['C0', 'C1', 'C2'] etc
