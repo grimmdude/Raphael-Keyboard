@@ -15,13 +15,13 @@ window.onload = function () {
 	
 	//------------------------------------------------------------
 
-	// Creates canvas 800 x 200 at 10, 10
+	// Creates canvas 700 x 200 in above defined div
 	var paper = Raphael(div_id, 700, 200);
 
 	// Define white key specs
 	var white_width = keyboard_width / 52;
 	
-		// Define black key specs
+	// Define black key specs
 	var black_width = white_width/2;
 	var black_height = keyboard_height/1.6;
 	
