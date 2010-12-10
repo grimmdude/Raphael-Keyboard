@@ -20,11 +20,11 @@ window.onload = function () {
 
 	// Define white key specs
 	var white_width = keyboard_width / 52;
-	
+
 	// Define black key specs
 	var black_width = white_width/2;
 	var black_height = keyboard_height/1.6;
-	
+
 
 	// cycle through each octave
 
@@ -49,10 +49,10 @@ window.onload = function () {
 		
 		repeat = repeat+7;
 		}
-		
-		
-		
-	// Highlight specific keys like so
+	
+	// Key highlighting example
 	keyboard_keys.C1.attr("fill", "yellow");
-	keyboard_keys.A5.attr("fill", "yellow");
+	keyboard_keys.G1.attr("fill", "yellow");
+	keyboard_keys.C2.attr("fill", "yellow");
+	keyboard_keys.E2.attr("fill", "yellow");
 };
