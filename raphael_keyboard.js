@@ -32,13 +32,13 @@ window.onload = function () {
 	keyboard_keys = [];
 	for (i=0;i<=octaves;i++) {
 		//white keys in back
-		keyboard_keys["C"+i] = paper.rect(white_width*repeat, 0, white_width, keyboard_height);
-		keyboard_keys["D"+i] = paper.rect(white_width*(repeat+1), 0, white_width, keyboard_height);
-		keyboard_keys["E"+i] = paper.rect(white_width*(repeat+2), 0, white_width, keyboard_height);
-		keyboard_keys["F"+i] = paper.rect(white_width*(repeat+3), 0, white_width, keyboard_height);
-		keyboard_keys["G"+i] = paper.rect(white_width*(repeat+4), 0, white_width, keyboard_height);
-		keyboard_keys["A"+i] = paper.rect(white_width*(repeat+5), 0, white_width, keyboard_height);
-		keyboard_keys["B"+i] = paper.rect(white_width*(repeat+6), 0, white_width, keyboard_height);
+		keyboard_keys["C"+i] = paper.rect(white_width*repeat, 0, white_width, keyboard_height).attr("fill", "white");
+		keyboard_keys["D"+i] = paper.rect(white_width*(repeat+1), 0, white_width, keyboard_height).attr("fill", "white");
+		keyboard_keys["E"+i] = paper.rect(white_width*(repeat+2), 0, white_width, keyboard_height).attr("fill", "white");
+		keyboard_keys["F"+i] = paper.rect(white_width*(repeat+3), 0, white_width, keyboard_height).attr("fill", "white");
+		keyboard_keys["G"+i] = paper.rect(white_width*(repeat+4), 0, white_width, keyboard_height).attr("fill", "white");
+		keyboard_keys["A"+i] = paper.rect(white_width*(repeat+5), 0, white_width, keyboard_height).attr("fill", "white");
+		keyboard_keys["B"+i] = paper.rect(white_width*(repeat+6), 0, white_width, keyboard_height).attr("fill", "white");
 				
 		//black keys on top
 		keyboard_keys["Csharp"+i] = paper.rect((white_width*repeat) +(black_width*1.5), 0, black_width, black_height).attr("fill", "black");
@@ -49,4 +49,10 @@ window.onload = function () {
 		
 		repeat = repeat+7;
 		}
+		
+		
+		
+	// Highlight specific keys like so
+	keyboard_keys.C1.attr("fill", "yellow");
+	keyboard_keys.A5.attr("fill", "yellow");
 };
