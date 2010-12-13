@@ -1,0 +1,5 @@
+See http://grimmdude.github.com/Raphael-Keyboard/ for an example.
+
+This is a fully scalable keyboard drawn with the Raphaël library.  Keys on the keyboard are stored in an array called keyboard_keys.  The keys of this array correspond to the appropriate key number; ie keyboard_keys['C0', 'A5', 'Dsharp2'] etc.
+
+To highlight a certain key just call the desired key object and add the Raphaël fill attribute: keyboard_keys.A5.attr("fill", "yellow");
