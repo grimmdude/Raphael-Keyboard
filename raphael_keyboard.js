@@ -16,7 +16,7 @@ window.onload = function () {
 	//------------------------------------------------------------
 
 	// Creates canvas 700 x 200 in above defined div
-	var paper = Raphael(div_id, 700, 200);
+	var paper = Raphael(div_id, keyboard_width, keyboard_height);
 
 	// Define white key specs
 	var white_width = keyboard_width / 52;
@@ -30,7 +30,7 @@ window.onload = function () {
 
 	var repeat = 0;
 	keyboard_keys = [];
-	for (i=0;i<=octaves;i++) {
+	for (i=0;i<octaves;i++) {
 		//white keys in back
 		keyboard_keys["C"+i] = paper.rect(white_width*repeat, 0, white_width, keyboard_height).attr("fill", "white");
 		keyboard_keys["D"+i] = paper.rect(white_width*(repeat+1), 0, white_width, keyboard_height).attr("fill", "white");
