@@ -37,6 +37,7 @@ window.onload = function () {
 	var repeat = 0;
 	keyboard_keys = [];
 	for (i=0;i<octaves;i++) {
+
 		//white keys in back
 		keyboard_keys["C"+i] = paper.rect(white_width*repeat, 0, white_width, keyboard_height).attr("fill", white_color);
 		keyboard_keys["D"+i] = paper.rect(white_width*(repeat+1), 0, white_width, keyboard_height).attr("fill", white_color);
