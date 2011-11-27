@@ -31,31 +31,32 @@ window.onload = function () {
 	var black_width = white_width/2;
 	var black_height = keyboard_height/1.6;
 
-
-	// cycle through each octave
-
 	var repeat = 0;
-	keyboard_keys = [];
+	var keyboard_keys = [];
+	
+	//define white and black key names
+	var wkn = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+	var bkn = ['Csharp', 'Dsharp', 'Fsharp', 'Gsharp', 'Asharp'];
+	
+	//create octave groups
 	for (i=0;i<octaves;i++) {
-
-		//white keys in back
-		keyboard_keys["C"+i] = paper.rect(white_width*repeat, 0, white_width, keyboard_height).attr("fill", white_color);
-		keyboard_keys["D"+i] = paper.rect(white_width*(repeat+1), 0, white_width, keyboard_height).attr("fill", white_color);
-		keyboard_keys["E"+i] = paper.rect(white_width*(repeat+2), 0, white_width, keyboard_height).attr("fill", white_color);
-		keyboard_keys["F"+i] = paper.rect(white_width*(repeat+3), 0, white_width, keyboard_height).attr("fill", white_color);
-		keyboard_keys["G"+i] = paper.rect(white_width*(repeat+4), 0, white_width, keyboard_height).attr("fill", white_color);
-		keyboard_keys["A"+i] = paper.rect(white_width*(repeat+5), 0, white_width, keyboard_height).attr("fill", white_color);
-		keyboard_keys["B"+i] = paper.rect(white_width*(repeat+6), 0, white_width, keyboard_height).attr("fill", white_color);
-				
-		//black keys on top
-		keyboard_keys["Csharp"+i] = paper.rect((white_width*repeat) +(black_width*1.5), 0, black_width, black_height).attr("fill", black_color);
-		keyboard_keys["Dsharp"+i] = paper.rect((white_width*repeat) +(black_width*3.5), 0, black_width, black_height).attr("fill", black_color);
-		keyboard_keys["Fsharp"+i] = paper.rect((white_width*repeat) +(black_width*7.5), 0, black_width, black_height).attr("fill", black_color);
-		keyboard_keys["Gsharp"+i] = paper.rect((white_width*repeat) +(black_width*9.5), 0, black_width, black_height).attr("fill", black_color);
-		keyboard_keys["Asharp"+i] = paper.rect((white_width*repeat) +(black_width*11.5), 0, black_width, black_height).attr("fill", black_color);
 		
-		repeat = repeat+7;
-		}
+		//create white keys first
+		for (var w=0; w <= 6 ; w++) {
+			keyboard_keys[wkn[w]+i] = paper.rect(white_width*(repeat + w), 0, white_width, keyboard_height).attr("fill", white_color);
+		};
+		
+		//set multiplier for black key placement
+		var bw_multiplier = 1.5;
+		
+		//then black keys on top
+		for (var b=0; b <= 4 ; b++) {	
+			keyboard_keys[bkn[b]+i] = paper.rect((white_width*repeat) + (black_width*bw_multiplier), 0, black_width, black_height).attr("fill", black_color);
+			bw_multiplier = (b == 1) ? bw_multiplier + 4 : bw_multiplier + 2;
+		};
+		
+		repeat = repeat + 7;
+	}
 	
 	// Key highlighting example
 	keyboard_keys.C1.attr("fill", "yellow");
